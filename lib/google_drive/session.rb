@@ -326,7 +326,7 @@ module GoogleDrive
           return upload_raw(:post, initial_url, io, title, params)
         end
 
-        def upload_raw(method, url, io, title = "Untitled", params = {}, parents = ) #:nodoc:
+        def upload_raw(method, url, io, title = "Untitled", params = {}) #:nodoc:
 
           params = {:convert => true}.merge(params)
           pos = io.pos
@@ -347,7 +347,7 @@ module GoogleDrive
               <title>#{h(title)}</title>
               <parents>
                 <id>0B_epTmLk83GvOVNFbENzYTVTNjg</id>
-                <kind/>drive#fileLink</kind>
+                <kind>drive#fileLink</kind>
               </parents>
             </entry>
           EOS
