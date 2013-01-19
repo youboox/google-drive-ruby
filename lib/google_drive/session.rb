@@ -342,20 +342,18 @@ module GoogleDrive
           end
 
           initial_xml = <<-"EOS"
-            <entry xmlns="http://www.w3.org/2005/Atom"
-                xmlns:docs="http://schemas.google.com/docs/2007">
-              <title>#{h(title)}</title>
-              <parents>
-                <parent>
-                  <id>0B_epTmLk83GvOVNFbENzYTVTNjg</id>
-                  <kind>drive#fileLink</kind>
-                </parent>
-              </parents>
-            </entry>
+            {
+              "title" : "#{title}",
+              "mimeType" : "#{content_type}",
+              "parents": [{
+                "kind": "drive#fileLink",
+                "id": "0B_epTmLk83GvOVNFbENzYTVTNjg"
+              }]
+            }
           EOS
 
           default_initial_header = {
-              "Content-Type" => "application/atom+xml",
+              "Content-Type" => "application/json",
               "X-Upload-Content-Type" => content_type,
               "X-Upload-Content-Length" => total_bytes.to_s(),
           }
