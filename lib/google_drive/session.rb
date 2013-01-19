@@ -346,8 +346,10 @@ module GoogleDrive
                 xmlns:docs="http://schemas.google.com/docs/2007">
               <title>#{h(title)}</title>
               <parents>
-                <id>0B_epTmLk83GvOVNFbENzYTVTNjg</id>
-                <kind>drive#fileLink</kind>
+                <parent>
+                  <id>0B_epTmLk83GvOVNFbENzYTVTNjg</id>
+                  <kind>drive#fileLink</kind>
+                </parent>
               </parents>
             </entry>
           EOS
